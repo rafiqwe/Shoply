@@ -1,11 +1,23 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import MainLayOut from "./LayOut/MainLayOut";
 const App = () => {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainLayOut />,
+      errorElement: <div>Page Not Found</div>,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+      ],
+    },
+  ]);
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
-  )
-}
+    <RouterProvider router={route} />
+  );
+};
 
-export default App
+export default App;
