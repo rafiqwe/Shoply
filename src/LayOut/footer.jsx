@@ -1,8 +1,7 @@
-
 const Footer = () => {
   return (
-    <div>
-      <p>© 2023 Shoply. All rights reserved.</p>
+    <div className="bg-gray-800 text-white text-center py-4 ">
+      <p>© {new Date().getFullYear()} Shoply. All rights reserved.</p>
     </div>
   )
 }
